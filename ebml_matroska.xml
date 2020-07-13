@@ -1269,8 +1269,10 @@ When disabled, the movie **SHOULD** skip all the content between the TimeStart a
     <implementation_note note_attribute="minOccurs">ChapterSegmentUID **MUST** be set (minOccurs=1) if ChapterSegmentEditionUID is used.</implementation_note>
     <extension type="webmproject.org" webm="0"/>
   </element>
-  <element name="ChapterContentType" path="0*1(\Segment\Chapters\EditionEntry\ChapterAtom\ChapterContentType)" id="0x4588" type="uinteger" maxOccurs="1" minver="4" default="0">
-    <documentation lang="en">Indicate what type of content the ChapterAtom contains. It can be used to automatically skip content based on the type.</documentation>
+  <element name="ChapterContentType" path="0*1(\Segment\Chapters\EditionEntry\ChapterAtom\ChapterContentType)" id="0x4588" type="uinteger" maxOccurs="1" minver="4">
+    <documentation lang="en">Indicate what type of content the ChapterAtom contains. It can be used to automatically skip content based on the type.
+A Nested chapter MUST have no `ChapterContentType` or use the same value as its Parent Chapter.
+    </documentation>
     <extension webm="0"/>
     <restriction>
       <enum value="0" label="Regular Content">
