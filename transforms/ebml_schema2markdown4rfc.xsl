@@ -4,7 +4,7 @@
   <xsl:variable name="smallcase" select="'abcdefghijklmnopqrstuvwxyz'"/>
   <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/>
   <xsl:template match="ebml:EBMLSchema">
-    <xsl:apply-templates select="//ebml:element"/>
+    <xsl:apply-templates select="//ebml:element[not(@maxver='0')]"/>
   </xsl:template>
   <xsl:template match="ebml:element">
     <xsl:choose>
